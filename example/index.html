@@ -3,8 +3,17 @@
   <head>
     <title>Mihiraki WebComponents example</title>
     <script type="module" src="../lib/index.js"></script>
+    <style>
+      body {
+          background-color: #666;
+          padding: 0;
+          margin: 0;
+      }
+    </style>
   </head>
   <body>
-    <mihiraki-viewer></mihiraki-viewer>
+    <mihiraki-viewer layout="rtol" src="./page%d.png"
+                     first-page="0" last-page="4" current-page="0">
+    </mihiraki-viewer>
   </body>
 </html>
