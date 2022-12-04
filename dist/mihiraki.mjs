@@ -87,7 +87,7 @@ const p = class {
 };
 let g = p;
 c(g, "RTL", "rtl"), c(g, "LTR", "ltr");
-const y = `
+const x = `
 * { margin: 0; padding: 0; }
 .hidden { display: none; }
 
@@ -119,23 +119,23 @@ const y = `
 }
 
 .flipper {
-  background: gray;
+  background: white;
   position: absolute;
   top: 0;
   width: 50%;
   height: 100%;
-  opacity: 50%;
+  opacity: 0;
   cursor: pointer;
 }
 
 .flipper.left { left: 0; }
 .flipper.right { right: 0; }
 `;
-class x extends HTMLElement {
+class y extends HTMLElement {
   constructor() {
     super(), this.attachShadow({ mode: "open" });
     const e = document.createElement("style");
-    e.textContent = y;
+    e.textContent = x;
     const t = document.createElement("div");
     t.setAttribute("class", "viewer-root"), this.singlePageViewer = w(), this.doublePageViewer = v(), t.appendChild(this.singlePageViewer), t.appendChild(this.doublePageViewer), this.doublePageViewer.addEventListener("flip-left", (i) => {
       this.flipLeft();
@@ -237,6 +237,6 @@ class x extends HTMLElement {
   }
 }
 function A() {
-  customElements.define("mihiraki-viewer", x);
+  customElements.define("mihiraki-viewer", y);
 }
 A();
